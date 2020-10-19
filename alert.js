@@ -5,6 +5,8 @@ var temp = document.querySelector(".temp");
 var desc = document.querySelector(".desc");
 var celsius = document.querySelector(".celsius");
 var fahren = document.querySelector(".fahren");
+var d = new Date();
+var n = d.toLocaleTimeString();
 
 button.addEventListener("click", function () {
   fetch(
@@ -20,9 +22,10 @@ button.addEventListener("click", function () {
 
       city.innerHTML = "City Name: " + nameValue;
       temp.innerHTML = "Temperature: " + "<br><br>" + tempValue + " K";
-      desc.innerHTML = "Description: " + descValue;
-      celsius.innerHTML = tempValue - 273.15 + " °C";
-      fahren.innerHTML = (tempValue - 273.15) * (9 / 5) + 32 + " °F";
+      desc.innerHTML = "Description: " + descValue + "<br> on <br>" + d + n;
+      celsius.innerHTML = Math.round(tempValue - 273.15) + " °C";
+      fahren.innerHTML =
+        Math.round((tempValue - 273.15) * (9 / 5) + 32) + " °F";
     })
 
     .catch((err) => alert("Unknown City Name"));
