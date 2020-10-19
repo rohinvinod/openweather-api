@@ -1,10 +1,10 @@
-var button = document.querySelector(".search");
-var cityname = document.querySelector(".cityname");
 var city = document.querySelector(".name");
 var temp = document.querySelector(".temp");
 var desc = document.querySelector(".desc");
 var celsius = document.querySelector(".celsius");
 var fahren = document.querySelector(".fahren");
+var button = document.querySelector(".search");
+var cityname = document.querySelector(".cityname");
 var d = new Date();
 var n = d.toLocaleTimeString();
 
